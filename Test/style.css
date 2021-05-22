@@ -148,3 +148,7 @@ body {
 .quiz-over-modal .content button:hover {
     background-color: #ff9900b4;
 }
+.image{
+    width: 400px;
+    display: flex;
+}
