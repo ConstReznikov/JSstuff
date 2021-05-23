@@ -29,6 +29,7 @@ body {
     color: #000000;
     padding: 15px 0;
     margin-bottom: 10px;
+    border: 2px dotted black;
 }
 
 .options {
@@ -137,7 +138,7 @@ body {
 .quiz-over-modal .content button {
     padding: 15px 50px;
     border: none;
-    background-color: #ff9800;
+    background-color: crimson;
     transition: all .2s ease-in-out;
     border-radius: 5px;
     cursor: pointer;
@@ -146,9 +147,18 @@ body {
 }
 
 .quiz-over-modal .content button:hover {
-    background-color: #ff9900b4;
+    background-color: grey;
 }
 .image{
-    width: 400px;
+    height: 300px;
+    
     display: flex;
+    margin: 0 auto;
+}
+@media (max-width: 555px){
+    .image{
+        height: 150px;
+        
+        
+    }
 }

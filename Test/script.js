@@ -26,33 +26,75 @@ const numberOfAllQuestions2 = document.getElementById(
 const btnTryAgain = document.getElementById("btn-try-again");
 
 const questions = [
-  { question: "Who is this", options: ["zook", "makima", "ayaka", "Hiro"], rightAnswer: 0, img:true, imgsrc:"img/1.jpg" },
-  { question: "Who is this", options: ["zook", "makima", "ayaka", "Hiro"], rightAnswer: 1, img:true, imgsrc:"img/2.png" },
-  { question: "What is Klee's algorithm", options: ["Jumpy Dumpies", "Given starting and ending positions of segments on a line, the task is to take the union of all given segments and find length covered by these segments.", "I dont know", "Help me"], rightAnswer: 1, img:false  },
-  { question: "Who is this", options: ["Cuckold", "makima", "ayaka", "Hiro"], rightAnswer: 0, img:true, imgsrc:"img/3.jpg" },
-  { question: "Who is this", options: ["Zero Two", "makima", "ayaka", "Hiro"], rightAnswer: 0, img:true, imgsrc:"img/4.jpg" },
-  { question: "Who is this", options: ["Trash", "Nobody", "Slut", "Worthless shit"], rightAnswer: 0, img:true, imgsrc:"img/5.jpg" },
-  { question: "Who is this", options: ["Based Chad", "Shirou", "ayaka", "Hiro"], rightAnswer: 0, img:true, imgsrc:"img/6.jpg" },
-
+  {
+    question: "Who is this",
+    options: ["Zook", "ereh", "Galliard", "Reiner"],
+    rightAnswer: 0,
+    img: true,
+    imgsrc: "img/1.jpg",
+  },
+  {
+    question: "Who is this",
+    options: ["Reze", "Makima", "Ayaka", "Misato"],
+    rightAnswer: 1,
+    img: true,
+    imgsrc: "img/2.png",
+  },
+  {
+    question: "What is Klee's algorithm",
+    options: [
+      "Jumpy Dumpies",
+      "Given starting and ending positions of segments on a line, the task is to take the union of all given segments and find length covered by these segments.",
+      "I dont know",
+      "Help me",
+    ],
+    rightAnswer: 1,
+    img: false,
+  },
+  {
+    question: "Who is this",
+    options: ["Cuckold", "Loser", "'Comedian'", "Idiot"],
+    rightAnswer: 0,
+    img: true,
+    imgsrc: "img/3.jpg",
+  },
+  {
+    question: "Who is this",
+    options: ["Zero Two", "Reze", "Power", "First President"],
+    rightAnswer: 0,
+    img: true,
+    imgsrc: "img/4.jpg",
+  },
+  {
+    question: "Who is this",
+    options: ["Eula", "Jean", "Lisa", "Klee"],
+    rightAnswer: 0,
+    img: true,
+    imgsrc: "img/5.jpg",
+  },
+  {
+    question: "Who is this",
+    options: ["Tartaglia", "Shirou", "John Wick", "Hiro"],
+    rightAnswer: 0,
+    img: true,
+    imgsrc: "img/6.jpg",
+  },
 ];
 //
 numberOfAllQuestions.innerHTML = questions.length;
 
 const load = () => {
-
-  if(questions[indexOfQuestion].img==true){
+  if (questions[indexOfQuestion].img == true) {
     let image = document.createElement("img");
-    image.src=questions[indexOfQuestion].imgsrc;
+    image.src = questions[indexOfQuestion].imgsrc;
     image.classList.add("image");
     question.innerHTML = questions[indexOfQuestion].question;
 
     question.appendChild(image);
-           // image.src = "IMAGE URL/PATH"
-}
-else{
-  question.innerHTML = questions[indexOfQuestion].question;
-  
-}
+    // image.src = "IMAGE URL/PATH"
+  } else {
+    question.innerHTML = questions[indexOfQuestion].question;
+  }
   option1.innerHTML = questions[indexOfQuestion].options[0];
   option2.innerHTML = questions[indexOfQuestion].options[1];
   option3.innerHTML = questions[indexOfQuestion].options[2];
@@ -147,26 +189,25 @@ for (option of optionElements) {
 const quizOver = () => {
   document.querySelector(".quiz-over-modal").classList.add("active");
 
-  switch(score){
+  switch (score) {
     case 0:
-      myOpinion.innerHTML="You are trash";
+      myOpinion.innerHTML = "You are trash";
       break;
     case 1:
     case 2:
     case 3:
-      myOpinion.innerHTML="Not Great not terrible";
+      myOpinion.innerHTML = "Not Great not terrible";
       break;
     case 4:
     case 5:
     case 6:
-      myOpinion.innerHTML="Almost Perfect, Almost";
+      myOpinion.innerHTML = "Almost Perfect, Almost";
       break;
     case 7:
-      myOpinion.innerHTML="Supre lit, based and def not cringe";
+      myOpinion.innerHTML = "Supre lit, based and def not cringe";
       break;
-
   }
- 
+
   correctAnswer.innerHTML = score;
   numberOfAllQuestions2.innerHTML = questions.length;
 };
